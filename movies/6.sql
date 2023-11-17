@@ -1,0 +1,1 @@
+SELECT avg(ratings.rating) FROM movies INNER JOIN ratings ON movie_id = movies.id WHERE movies.year=2012;

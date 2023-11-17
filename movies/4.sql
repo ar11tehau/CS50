@@ -1,0 +1,1 @@
+SELECT count(title) FROM movies INNER JOIN ratings ON movie_id = movies.id WHERE ratings.rating=10;

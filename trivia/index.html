@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section" >
+                <h2>Part 1: Multiple Choice </h2>wget https://cdn.cs50.net/2022/fall/labs/9/helloflask.zip
+                <h3>How many people lives in France</h3>
+                <button type="button" id="a">50 millions</button>
+                <button type="button" id="b">60 millions</button>
+                <button type="button" id="c">70 millions</button>
+            </div>
+            <script>
+                document.querySelector("#a").addEventListener('click', function(){
+                    document.querySelector("#a").style.backgroundColor = "red";
+                });
+                document.querySelector("#b").addEventListener('click', function(){
+                    document.querySelector("#b").style.backgroundColor = "red";
+                });
+                document.querySelector("#c").addEventListener('click', function(){
+                    document.querySelector("#c").style.backgroundColor = "green";
+                });
+            </script>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3>What is the French capital ?</h3>
+                <form>
+                    <input autocomplete="off" type="texte" placeholder="City's name" id="city">
+                    <button type="button" id="checkbutton">Check Answer</button>
+                </form>
+                <script>
+
+                function city()
+                    {
+                        let cityname = document.querySelector("#city").value.toLowerCase();
+                        let check = document.querySelector("#checkbutton")
+                        if (cityname=="paris")
+                        {
+                            check.style.backgroundColor = "green";
+                        }
+                        else
+                        {
+                            check.style.backgroundColor = "red";
+                        }
+                    }
+                    document.querySelector("#checkbutton").addEventListener('click', city);
+                    document.querySelector("#city").addEventListener('keypress', function(){
+                        if(event.key=="Enter")
+                            {
+                                event.preventDefault()
+                                city();
+                            };
+                        })
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
